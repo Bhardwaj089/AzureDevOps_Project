@@ -1,0 +1,22 @@
+name: DemoPipeline_$(Date:YYYYMMdd)$(Rev:.r)
+trigger:
+  branches:
+    include:
+      - main
+  pool:
+    name: 'Default'
+  steps:
+    - checkout: self
+      persistCredentials: true
+    - script: echo "Hello World!"
+      displayName: 'Run a one-line script'
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml for YAML pipeline examples.
+      displayName: 'Run a multi-line script'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          Write-Host "Hello from PowerShell!"
+
