@@ -1,14 +1,10 @@
-name: DemoPipeline_$(Date:YYYYMMdd)$(Rev:.r)
+
 trigger:
-  branches:
-    include:
-      - main
+ - main
 stages:
   - stage: Build
-    displayName: Build Stage
     jobs:
       - job: BuildJob
-        displayName: Build Job
         steps:
           - script: echo Building the project...
             displayName: 'Build Step'
@@ -17,8 +13,6 @@ stages:
     dependsOn: Build
     jobs:
       - job: DeployJob
-        displayName: Deploy Job
         steps:
           - script: echo Deploying the project...
-            displayName: 'Deploy Step'
 
