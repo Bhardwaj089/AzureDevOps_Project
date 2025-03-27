@@ -8,11 +8,4 @@ stages:
         steps:
           - script: echo Building the project...
             displayName: 'Build Step'
-  - stage: Deploy
-    displayName: Deploy Stage
-    dependsOn: Build
-    jobs:
-      - job: DeployJob
-        steps:
-          - script: echo Deploying the project...
 
