@@ -5,8 +5,7 @@ stages:
   - stage: Build
     jobs:
       - job: BuildJob
-        pool:
-          vmImage: 'ubuntu-latest'
+        pool: mypool
         steps:
           - script: echo Building the project...
             displayName: 'Build Step'
