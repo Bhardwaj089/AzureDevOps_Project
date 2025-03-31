@@ -6,5 +6,29 @@ stages:
       - job: BuildJob
         steps:
           - script: echo Building the project...
+<<<<<<< HEAD
             displayName: 'Build Steps
+=======
+            displayName: 'Build Step'
+  - stage: Test
+    jobs:
+      - job: TestJob
+        steps:
+          - script: echo Running tests...
+            displayName: 'Test Step'
+  - stage: Deploy
+    jobs:
+      - job: DeployJob
+        steps:
+          - script: echo Deploying the project...
+            displayName: 'Deploy Step'
+  - stage: Notify
+    jobs:
+      - job: NotifyJob
+        steps:
+          - script: echo Sending notifications...
+            displayName: 'Notify Step'
+
+
+>>>>>>> 00f996c (3rd pipeline)
 
