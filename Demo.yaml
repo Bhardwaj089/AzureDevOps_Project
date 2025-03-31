@@ -1,11 +1,9 @@
-
 trigger:
   - main
 stages:
   - stage: Build
     jobs:
       - job: BuildJob
-        pool: mypool
         steps:
           - script: echo Building the project...
             displayName: 'Build Step'
